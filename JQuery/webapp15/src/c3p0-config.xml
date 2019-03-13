@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<!-- 默认配置 -->
+	<default-config>
+	    <property name="initialPoolSize">10</property>
+	    <property name="maxPoolSize">100</property>
+	    <property name="minPoolSize">10</property>
+	    <property name="driverClass">com.mysql.jdbc.Driver</property>
+<!--    <property name="jdbcUrl">jdbc:mysql://localhost:3306/web_myschool</property>-->
+	    <property name="jdbcUrl">jdbc:mysql://localhost:3306/jquery_myschool?characterEncoding=UTF-8</property>
+	    <property name="user">root</property>
+	    <property name="password">123456</property>
+	</default-config>
+	<!-- 命名配置(自定义配置) -->
+	<named-config name="myc3p0">
+	<!--指定链接数据源的基本属性  -->
+		<property name="user">root</property>
+		<property name="password">123456</property>
+	    <property name="jdbcUrl">jdbc:mysql://localhost:3306/jquery_myschool</property>
+	    <property name="driverClass">com.mysql.jdbc.Driver</property> 
+		<property name="initialPoolSize">10</property>
+	    <property name="maxPoolSize">100</property>
+	    <property name="minPoolSize">10</property>
+	</named-config>
+</c3p0-config>
