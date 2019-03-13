@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打印三角形和求平均分</title>
+</head>
+<script>
+    onload=function () {
+        var arr=[];
+        var txt;
+        for(var i=0;i<8;i++){
+            txt="*";
+            for(var j=0;j<i;j++){
+                txt +="&emsp;*";
+            }
+             arr.push(txt);//添加*
+        }
+            document.getElementById("text").innerHTML=(arr.join("<br>"))
+    }
+
+</script>
+
+<body>
+<div id="text" style="text-align:center;font-size: 25px;"></div>
+</body>
+</html>

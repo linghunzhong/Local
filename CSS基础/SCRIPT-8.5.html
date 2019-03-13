@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉拉单</title>
+</head>
+<style type="text/css">
+    ul{border:1px solid #d9d9d9;background-color: #D7D7D7;
+    }
+    li,dt{float: left;list-style: none;width: 300px;height: 40px;line-height: 40px;
+        border: 1px solid #d9d9d9;background: #d9d9d9;text-align: center}
+    dt{border: 1px solid #cccccc;margin-top: -15px;
+    }
+    #clear{clear: both}
+   dl{display: none}
+    li:hover{cursor: pointer}
+</style>
+<script>
+    onload=function () {
+        var btn=document.querySelectorAll("li")
+        for(var i=0;i<btn.length;i++){
+            btn[i].onmouseover=function(){
+                var dd=this.querySelector("dl");
+                /*在当前元素的里面调用元素,不能用[i],因为在for循环在加载的一瞬间就完成了
+                * 而onmouseover事件需要很久后才执行，
+                *
+                * */
+            if(dd){dd.style.display="block";}
+            }
+            btn[i].onmouseout=function(){//离开
+                var dd=this.querySelector("dl");
+                if(dd){dd.style.display="none";}
+            }
+        }
+    }
+
+</script>
+<body>
+<ul>
+    <li>首页</li>
+    <li>新闻
+        <dl>
+            <dt>国际要闻</dt>
+            <dt>国内新闻</dt>
+        </dl>
+    </li>
+    <li>游戏下载
+        <dl>
+            <dt>CF</dt>
+            <dt>王者荣耀</dt>
+        </dl>
+    </li>
+    <li>关于我们
+        <dl>
+            <dt>版本号</dt>
+            <dt>帮助</dt>
+        </dl>
+    </li>
+    <span id="clear"></span>
+</ul>
+</body>
+</html>

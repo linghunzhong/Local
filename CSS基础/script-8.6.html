@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证手机号码</title>
+</head>
+<script>
+    onload=function () {
+        var verifyer=true;
+        var form=document.querySelector("#form")
+        form.onsubmit=function(){
+            checkForm();
+            return aa;
+        }
+        function checkForm(){
+            var mm=document.querySelector("#moble")
+            var reg=/^1[358]\d{9}$/;
+
+            if(!reg.test(mm.value)){
+                verifyer=false;
+                alert("手机格式不正确")
+            }
+        }
+    }
+</script>
+
+<body>
+<form action="http://www.baidu.com" id="form">
+    手机:<input type="text" id="moble"/><br>
+         <input type="submit"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面认证</title>
+</head>
+<style>
+
+    body{lmargin:0;
+        padding:0;}
+    .p1{font-size:12px;
+        text-align:right;
+        height:28px;
+        width:80px;
+    }
+   input{font-size:12px;
+        border:solid 1px #61b16a ;
+        width:150px;
+        height:30px;
+    }
+    .submit{
+        font-size:12px;
+        background-color:#eeeeee;
+        border:solid 1px #cccccc ;
+        width:60px;
+        height:23px;
+        padding-top:3px;
+    }
+    textarea{
+        font-size:12px;
+        border:solid 1px #61b16a ;
+    }
+    #mytable{
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        width:760px;
+    }
+    #main{
+
+        border-left:solid 1px #7bcc87;
+        border-right:solid 1px #7bcc87;
+        background-color:#f9f8ff;
+
+    }
+        #center {
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;
+            width: 80%;
+            height: 100%;
+        }
+</style>
+<body>
+ <table id="mytable" border="0" cellspacing="0" cellpadding="0">
+     <form action="" method="post" name="myform" onsubmit="return check()"></form>
+ <tbody>
+ <tr>
+    <td id="regtop"><img src="image/reg-top.jpg"></td>
+</tr>
+<tr>
+    <td id="main"><table width="83%" border="0" cellpadding="0" cellspacing="0" id="center">
+        <tbody><tr><td width="112" class="p1">用户名：</td>
+            <td width="496"> <input id="username" type="text">
+                <span class="username" ></span></td>
+        </tr>
+        <tr><td class="p1"> 密&nbsp;&nbsp;码：</td>
+            <td><input id="pwd" type="password"> <span id="pwds"></span> </td>
+
+        </tr>
+        <tr>
+            <td class="p1" width="112">再次输入密码：</td>
+            <td><input id="regPwd" type="password"><span id="passwords"></span></td>
+        </tr>
+        <tr>
+            <td class="p1">E-mail：</td>
+            <td><input id="email" type="text"></td>
+        </tr>
+        <tr>
+            <td class="p1"> 个人简介：</td>
+            <td><textarea id="intro" cols="30" rows="4"></textarea></td>
+        </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr>
+    <td background="image/reg-end.jpg" style="height:63px; text-align:center;">
+        <input name="B1" type="submit" value="提交" class="submit">&nbsp;&nbsp;
+        <input name="B2" type="reset" value="重置" class="submit">
+    </td>
+</tr>
+</tbody>
+</table>
+</body>
+<script type="text/javascript">
+    var pas=document.querySelector("#pwd")
+    var regPwds=document.querySelector("#regPwd")
+    //为所有输入框添加焦点颜色
+   var input=document.querySelectorAll("input[type=text],input[type=password]");
+   for( var i in input){
+       input[i].onfocus=function () {
+           this.style.outline=("1px red solid");
+       }
+   }
+   //失去焦点
+    var usernames=document.querySelector("#username")
+    usernames.onblur=function () {
+        var names=document.querySelector(".username")
+        if(this.value==""){
+            alert("用户名不能为空")
+        }
+        /*if(this.value==""){
+            names.innerHTML=" <span style='background: pink; color: red;" +
+            "border: 1px solid red;'> <img src='image/li_err.gif'> 用户名不能为空</span>  ";
+        }else{
+            names.innerHTML="<span style='color: green;border: 1px solid green;'>" +
+                "<img src='image/li_ok.gif'>输入正确</span>";
+            this.style.outline=("1px green solid");
+        }*/
+    }
+    var pas=document.querySelector("#pwd")
+    pas.onblur=function (){
+        var pwds=document.querySelector("#pwds")
+        if(this.value.length<6){
+            pwds.innerHTML="<span style='background-color: lightpink;color: red;border: 1px solid red';>" +
+                "<img src='image/li_err.gif'>密码不能少于六位</span>"
+        }else{
+            pwds.innerHTML="<span style='color: green;border: 1px solid red'><img src='image/li_ok.gif'>输入正确</span>"
+            this.style.outline=("1px green solid");
+        }
+        var regPwds=document.querySelector("#regPwd")
+        regPwds.onblur=function () {
+            var pp=document.querySelector("#passwords");
+            if(regPwds.value!=pas.value){
+                pp.innerHTML="<span style='background-color: lightpink;color: red>" +
+                    "<img src='image/li_err.gif'>两次密码不一致</span>"
+            }else{
+                pp.innerHTML="<span style='color: green;border: 1px solid red'>" +
+                    "<img src='image/li_ok.gif'>输入正确</span>"
+                    this.style.outline=("1px green solid");
+            }
+        }
+    }
+</script>
+</html>

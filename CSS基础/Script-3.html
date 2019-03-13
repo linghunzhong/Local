@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var age=prompt("请输入一个四位数的年份");
+    if(age%4==0&&age%100!=0){
+
+       alert(age+"年是闰年");
+    }else {
+        if (age % 400 == 0) {
+            alert(age + "年是闰年");
+        }
+        else {
+          alert(age + "年不是闰年");
+        }
+    }
+
+ /*function year(){
+       var age=prompt("请输入一个四位数的年份");
+       if (age % 4 == 0 && age % 100 != 0) {
+
+           alert(age + "年是闰年");
+       } else {
+           if (age % 400 == 0) {
+               alert(age + "年是闰年");
+           }
+           else {
+               alert(age + "年不是闰年");
+           }
+       }
+   }year();*/
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动切换效果</title>
+</head>
+<!--使用onmouseover和display来控制-->
+<style type="text/css">
+    .sekect{background-color: #D7D7D7}
+    #table1,#table2,.con1,.con2{border: 1px solid #d9d9d9}
+    #table1,#table2{padding:5px;}
+    .con1,.con2{height: 80px  }
+    .con2{background-color: yellow;}
+    .con2{display: none;}
+</style>
+<body>
+  <span id="table1">tabl1</span>
+  <span id="table2">tabl2</span>
+  <div class="con1">tabl1第一个容器的内容：哈哈哈</div>
+  <div class="con2">tabl2第二个容器的内容：啦啦啦</div>
+
+</body>
+<script type="text/javascript">
+    var table1=document.querySelector("#table1")
+    var table2=document.querySelector("#table2")
+    var con1=document.querySelector(".con1")
+    var con2=document.querySelector(".con2")
+    table1.onmouseover=function () {
+        con2.style.display="none";
+        con1.style.display="block";
+        table1.classList.add("sekect");//选项1添加颜色
+        table2.classList.remove("sekect");//当放在1上时2移除颜色
+    }
+    table2.onmouseover=function () {
+        con1.style.display="none";
+        con2.style.display="block";
+        table2.classList.add("sekect");
+        table1.classList.remove("sekect");//
+
+    }
+</script>
+
+
+</html>

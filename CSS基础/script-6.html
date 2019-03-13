@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    onload=function(){
+        var btn=document.querySelector("#btn")
+        btn.onclick=function(){
+            var stage=document.querySelector("#stage");//不用全部
+            var str="";
+            var checkboxs=document.querySelectorAll("[type=checkbox]")
+            for( var i=0;i<checkboxs.length;i++){
+                if(checkboxs[i].checked==true){//==赋值，如果点击就为true，就输出str
+                str=str+checkboxs[i].value+"<br>";
+            }
+            }
+                stage.innerHTML=str;
+        } /*btn.onclick=aaa;*/
+    }
+</script>
+<body>
+<h3>请选择您的爱好：</h3>
+<ul>
+    <li><input type="checkbox" value="音乐">音乐</li>
+    <li><input type="checkbox" value="登上">登上</li>
+    <li><input type="checkbox" value="游泳">游泳</li>
+    <li><input type="checkbox" value="阅读">阅读</li>
+    <li><input type="checkbox" value="跑步">跑步</li>
+    <li><input type="checkbox" value="打球">打球</li>
+    <li><input type="checkbox" value="其他">其他</li>
+    <hr>
+    <li><input type="button" value="查看我选择的爱好" id="btn"></li>
+
+</ul>
+<div id="stage"></div>
+</body>
+</html>

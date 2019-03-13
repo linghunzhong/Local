@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document*/
+div,h3,form,table,tr,td,input{margin: 0;padding: 0;}
+#box {
+    width: 300px; margin: 0 auto;/*boder-width:5px;border-color:#f00;bode-style:dashed;*/
+    border: 1px solid #3a6587;
+}
+
+ #box h3{
+    height: 35px;
+    line-height:35px;
+    font-size: 20px;
+    padding-left: 20px;
+    background-color:#5d6c87;
+    color: #FFFFFF;
+}
+#box form{
+    margin: 30px 20px;padding: 30px 20px;
+
+}
+td{
+    padding:2px;}
+td.right{text-align: right;}
+td input.asd{margin-left:69px;}

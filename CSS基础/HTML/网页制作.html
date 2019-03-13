@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css的引入和优先级</title>
+    <style type="text/css">
+       /* ul,li{color: blue}*/
+        ul{color:blue;font-size: 20px;}
+        ul#a{color: red}
+        .b{color: green;}
+    </style>
+</head>
+<body calss="box">
+      <ul>
+          <li>网页制作
+             <ul>
+                 <li>使用dw制作网页</li>
+                 <li>使用css布局和美化网页
+                 <ul id="a">
+                     <li>css初级</li>
+                     <li>css中级</li>
+                     <li>css高级</li>
+                 </ul>
+                 </li>
+                 <li>使用javaScript制作特效</li>
+             </ul>
+          </li>
+          <li>平面设计
+              <ol class="b">
+                  <li>美术基础</li>
+                  <li>使用photshop处理图形图像</li>
+                  <li>使用Illustrator设计图形</li>
+                  <li>制作flash动画</li>
+              </ol>
+          </li>
+      </ul>
+</body>
+</html>

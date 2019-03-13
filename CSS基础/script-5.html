@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHtml与document</title>
+</head>
+<script>
+    onload=function () {
+        //1.按钮1事件
+        var btn1=document.querySelector("input")
+        function changeLayer(){
+            document.querySelector("span").innerHTML="百度"
+        }
+        btn1.onclick=changeLayer;//让点击和属性相等
+        //2.按钮2事件
+        var btn2=document.querySelector("#showinput")
+        function showShowinput(){
+            var inputs=document.querySelectorAll("input")
+            var str="";
+            for(var i=0;i<inputs.length;i++){
+                str=str+inputs[i].value+"<br>";
+            }
+            var stage=document.querySelector("#stage");
+            stage.innerHTML=str;
+        }
+        btn2.onclick=showShowinput;
+        //3.事件3
+        var btn3=document.querySelector("#sss");
+        function seasons() {
+            var texts=document.querySelectorAll("[type=text]");
+            var ss="";
+            for(var k=0;k<texts.length;k++){
+                ss=ss+texts[k].value+"<br>";
+            }
+            var stage=document.querySelector("#stage");
+            stage.innerHTML=ss;
+        }
+        btn3.onclick=seasons;
+
+    }
+</script>
+<style type="text/css">
+    span{font-size: 30px;font-family: "Adobe Arabic";font-weight: bold}
+    input#a{margin-left: 55px}
+    [type=text]{width: 100px}
+
+</style>
+<body>
+<form action="" id="aa">
+    <span>新浪</span>
+    <input type="button" value="改变层内容" id="a">
+    <br>
+    <br>
+    <input type="text" value="春">
+    <input type="text" value="夏">
+    <input type="text" value="秋">
+    <input type="text" value="冬">
+    <br>
+    <input type="button" value="显示input内容" id="showinput">
+    <input type="button" value="显示season内容" id="sss">
+    <div id="stage"></div>
+</form>
+</body>
+</html>

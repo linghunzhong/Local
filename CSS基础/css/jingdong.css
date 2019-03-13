@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document*/
+
+#box{width: 420px;height:200px}
+h2{text-indent:1em;font-style: italic;font-siae:25px}
+#heards{font-style: italic;font-size:16px}
+ul{list-style: none;line-height: 30px}
+ul li{font-size: 16px}
+ul li span{font-size: 10px;font-style: italic;color: blue;text-decoration: underline}
+h5{text-indent:3em;font-style: italic;color: #d6d5d6}

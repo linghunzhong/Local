@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>新用户注册页面</title>
+    <link type="text/css" rel="stylesheet" href="css/wangyi.css">
+</head>
+<body>
+<div id="header"><img src="image/register_logo.gif" alt="logo"></div>
+<div id="main">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <td class="bg bg_top_left"></td>
+            <td class="bg_top"></td>
+            <td class="bg bg_top_right"></td>
+        </tr>
+        <tr>
+            <td class="bg_left"></td>
+            <td class="content">
+
+                <form id="registerform" action="#submit" method="post" name="myform" onsubmit="return checkForm()">
+                    <dl>
+                        <dt>通行证用户名：</dt>
+                        <dd><input type="text" id="userName" onfocus="focusShow('userName','1、由字母、数字、下划线、点、减号组成<br/>2、只能以数字、字母开头或结尾，且长度为4-18')" onblur="checkUserName()" class="inputs userWidth"> @163.com</dd>
+                        <div id="userNameId"></div>
+                    </dl>
+                    <dl>
+                        <dt>登录密码：</dt>
+                        <dd><input type="password" id="pwd" class="inputs" onfocus="focusShow('pwd','密码应为6-16个字符')" onblur="checkPwd()"></dd>
+                        <div id="pwdId"></div>
+                    </dl>
+                    <dl>
+                        <dt>重复登录密码：</dt>
+                        <dd><input type="password" id="repwd" class="inputs" onfocus="focusShow('repwd','请再次输入密码')" onblur="checkRepwd()"></dd>
+                        <div id="repwdId"></div>
+                    </dl>
+                    <dl>
+
+                        <dt>性别：</dt>
+                        <dd><input name="sex" type="radio" value="" checked="checked">男 <input name="sex" type="radio" value="">女 </dd>
+                    </dl>
+                    <dl>
+                        <dt>真实姓名：</dt>
+                        <dd><input type="text" id="realName" class="inputs" onfocus="focusShow('realName','真实姓名包含汉字、英文字母')" onblur="checkRealName()"></dd>
+                        <div id="realNameId"></div>
+                    </dl>
+                    <dl>
+                        <dt>昵称：</dt>
+                        <dd><input type="text" id="nickName" class="inputs" onfocus="focusShow('nickName','1、包含汉字、字母、数字、下划线以及@!#$%&amp;*<br/>特殊字符<br/>2、长度为4－20个字符<br/>3、一个汉字占两个字符')" onblur="checkNikeName()"></dd>
+                        <div id="nickNameId"></div>
+                    </dl>
+                    <dl>
+                        <dt>关联手机号：</dt>
+                        <dd><input type="text" id="tel" class="inputs" onfocus="focusShow('tel','1、手机号码以13，15，18开头<br/>2、手机号码由11位数字组成')" onblur="checkTel()"></dd>
+                        <div id="telId"></div>
+                    </dl>
+                    <dl>
+                        <dt>保密邮箱：</dt>
+                        <dd><input type="text" id="email" class="inputs" onfocus="focusShow('email','请输入您常用的电子邮箱，邮箱应包含@和.符号')"></dd>
+                        <div id="emailId" ></div>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><input name="dosubmit" type="submit" value=" " id="submitBtn" ></dd>
+                    </dl>
+                </form>
+            </td>
+            <td class="bg_right"></td>
+        </tr>
+        <tr>
+            <td class="bg bg_end_left"></td>
+            <td class="bg_end"></td>
+            <td class="bg bg_end_right"></td>
+        </tr>
+        </tbody></table>
+</div>
+</body>
+<script type="text/javascript">
+    //获取DOM对象
+    function e(str){
+        return document.getElementById(str);
+    }
+    //动态添加有样式的内容
+    //ok_prompt 为提示文字验证正确的className
+    //error_prompt  为提示文字验证错误时className
+    //import_prompt  为提示文字提示时className
+
+    function appendHtml(obj,str,className){
+        obj.innerHTML = str;
+        obj.className  = className;
+    }
+    var verifyer,userName,userNameId,inputs,pwd,pwdId,repwd,repwdId,realName,realNameId,nickName,nickNameId,tel,telId,email,emailId;
+    onload=function () {
+        verifyer=true;
+        userName=e("userName");
+        userNameId=e("userNameId");
+        inputs = document.querySelectorAll(".inputs userWidth,.inputs");
+        pwd=e("pwd");
+        pwdId=e("pwdId");
+        repwd=e("repwd");
+        repwdId=e("repwdId");
+        realName=e("realName");
+        realNameId=e("realNameId");
+        nickName=e("nickName");
+        nickNameId=e("nickNameId");
+        tel=e("tel");
+        telId=e("telId");
+        email=e("email");
+        emailId=e("emailId");
+    }
+    //验证表单
+    function checkForm(){
+        return verifyer;
+    }
+    //获得鼠标时触发的事件
+    //import_prompt  为提示文字提示时className
+    function focusShow(inputId,stu) {
+
+      //  遍历
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].id == inputId) {
+                var input = inputs[i].parentNode.parentNode.lastChild;
+                inputs[i].className = "redBorder"
+                inputs[i].onmouseover = function () {
+                    input.previousSibling.className = "import_prompt"
+                    input.previousSibling.innerHTML = stu;
+                }
+                inputs[i].onmouseout = function () {
+                    input.previousSibling.className = "import_prompt"
+                    input.previousSibling.innerHTML = "";
+                }
+            }
+        }
+    }
+    var username=document.querySelector("#userName");
+    username.onblur=function () {
+        var userNameid=document.querySelector("#userNameId");
+        if(this.value==""){
+            alert("用户名不能为空")
+        }
+    }
+
+        //验证用户名输入
+      /*function checkUserName() {
+          var reg = /^[a-zA_Z0-9][.a-zA-Z0-9_-]{3,17}$/g
+          var str = "用户名输入错误";
+          var str1 = "用户名输入正确";
+          if (!userName.value.match(reg)) {
+              appendHtml(userNameId, str, "error_prompt")
+              verifyer = false;
+          } else {
+              appendHtml(userNameId, str1, "ok_prompt")
+              userName.className = "greenBorder"
+              verifyer = true;
+          }
+      }*/
+          //验证密码
+          function checkPwd(){
+          var reg=/^[0-9A_Za-z]\w{3,5}$/g
+          var str2="密码输入错误"
+          if(!pwd.value.match(reg)){
+              appendHtml(pwdId,str2,"error_prompt")
+              verifyer=false;
+          }else {
+              appendHtml(pwdId,"密码输入正确","ok_prompt")
+              pwd.className="greenBorder";
+              verifyer=true;
+          }
+     }
+     //再次输入密码
+    function checkRepwd() {
+         var str3="密码不能少于六位"
+        if(repwd.value==pwd.value&&repwd.value!=""){
+            appendHtml(repwdId,"密码输入正确","ok_prompt")
+            repwd.className="greenBorder";
+            verifyer=true;
+    }else{
+            appendHtml(repwdId,str3,"error_prompt")
+            verifyer=false;
+        }
+    }
+    //真实姓名
+    function checkRealName(){
+        var reg=/^[\u4e00-\u9fa5]{2,8}$|^[a-zA_Z\/]{2,8}$]/g;
+        if(!realName.value.match(reg)){
+           appendHtml(realNameId,"姓名格式输入有误","error_prompt")
+            verifyer=false;
+        }else{
+            appendHtml(realNameId,"输入正确","ok_prompt")
+            realName.className="greenBorder";
+            verifyer=true;
+        }
+    }
+    //昵称验证1、包含汉字、字母、数字、
+    // 下划线以及@!#$%&amp;*<br/>特殊字符<br/>2、长度为4－20个字符
+   // 3、一个汉字占两个字符'
+    function checkNikeName() {
+        var reg = /^[\u4e00-\u9fa5]{2,20}$|^\s{4,20}$/g
+        if(!nickName.value.match(reg)){
+            appendHtml(nickNameId,"昵称格式有误","error_prompt")
+            verifyer=false
+        }else {
+            appendHtml(nickNameId,"输入正确")
+            nickName.className="ok_prompt";
+            verifyer=true;
+        }
+    }
+    //验证手机
+    function checkTel(){
+        var reg=/^1[358]\d{9}$/;
+        if(!tel.value.match(reg)){
+            appendHtml(telId,"关联手机号码不正确，请重新输入","error_prompt");
+            verifyer=false;
+        }else{
+            appendHtml(telId,"输入正确","ok_prompt");
+            tel.className="greenBorder";
+            verifyer=true;
+        }
+    }
+    //验证邮箱
+    function checkEmail(){
+        var reg=/^\w+@\w+(\.\w+){1,2}$/;
+        if(!email.value.match(reg)){
+            appendHtml(emailId,"邮箱格式不正确","error_prompt");
+            verifyer=false;
+        }else{
+            appendHtml(emailId,"输入正确","ok_prompt");
+            email.className="greenBorder";
+            verifyer=true;
+        }
+    }
+    var registerform=document.querySelector("#registerform")
+    registerform.onsubmit=function () {
+        var isubmit=confirm("确认提交吗")
+        if(isubmit) {
+            return true;
+        }return false;
+    }
+
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css精灵</title>
+    <style type="text/css">
+        .box{position:relative;width:1000px;height:200px;background-color:#D7D7D7;
+            border: 2px solid #d9d9d9;margin: 0 auto;padding: 0 auto;  }
+        .box .box1{position: absolute;margin-left: 25px;float: right}
+        .box .first{float:right;margin-left: 15px;margin-right:10px}
+        .box .two{float:right;margin-left: 15px}
+        .box .three{float:right;margin-left: 10px}
+        .box .four{float:right;margin-right: 5px}
+        /*.box h4{margin-top:-70px;padding:30px;float: right;background-color: #000000
+            background: rgba(0,0,0,0.5);
+            background: #000\9;filter:alpha(opacity=30);opacity: 0.8;}*/
+
+         .box p.a1{margin-top:-40px;margin-right:9px;width:230px;background-color:
+                  #000;float: right;background: rgba(0,0,0,0.5);
+                  background: #000\9;filter:alpha(opacity=30);opacity: 0.8;
+                  color: #fff;text-align: center;
+         }
+        .box p.a2{margin-top:-40px;margin-right:255px;width:230px;background-color:
+                #000;float: right;background: rgba(0,0,0,0.5);
+            background: #000\9;filter:alpha(opacity=30);opacity: 0.9;
+            color: #fff;text-align: center;
+        }
+        .box p.a3{margin-top:-40px;margin-right:500px;width:230px;background-color:
+                #000;float: right;background: rgba(0,0,0,0.5);
+            background: #000\9;filter:alpha(opacity=30);opacity: 0.9;
+            color: #fff;text-align: center;}
+        .box p.a4{margin-top:-40px;margin-right:745px;width:230px;background-color:
+                #000;float: right;background: rgba(0,0,0,0.5);
+            background: #000\9;filter:alpha(opacity=30);opacity: 0.9;
+            color: #fff;text-align: center;
+        }
+/*css精灵*/
+    .box .box1 p i{position:relative;display: inline-block;float:right;width:130px;height:150px ;
+    background: url("../image/btn.png") no-repeat}
+
+    .box .box1 p i.btn2{position: absolute;display:inline-block;background-position:5px -60px;
+        margin-left: 70px;margin-top: 60px}
+    .box .box1 p i.btn3{position: absolute;display:inline-block;background-position:5px -60px;
+        margin-left:330px;margin-top: 60px}
+    .box .box1 p i.btn4{position: absolute;display:inline-block;background-position:5px -60px;
+        margin-left:560px;margin-top: 60px}
+    .box .box1 p i.btn5{position: absolute;display:inline-block;background-position:5px -60px;
+        margin-left:800px;  margin-top: 60px}
+    .box .box1 p i.btn6{position: absolute;display:inline-block;background-position:96px 80px;
+        ;margin-left:-122px; }
+
+    .box .box1 p i.btn1{position: absolute;display:inline-block;background-position:-35px 80px;
+        margin-left: 940px}
+
+
+    </style>
+</head>
+<body>
+     <div class="box">
+         <div class="box1">
+             <p><i class="btn6"></i></p>
+             <p><i class="btn2"></i></p>
+             <p><i class="btn3"></i></p>
+             <p><i class="btn4"></i></p>
+             <p><i class="btn5"></i></p>
+             <p><i class="btn1"></i></p>
+             <p class="first"><img src="../image/01.jpg"></p>
+             <p class="two"> <img src="../image/01.jpg"></p>
+             <p class="three"><img src="../image/01.jpg"></p>
+             <p class="four"><img src="../image/01.jpg"></p>
+             <p class="a1">好看的动画片赶紧来看啦</p>
+             <p class="a2">好看的动画片赶紧来看啦</p>
+             <p class="a3">好看的动画片赶紧来看啦</p>
+             <p class="a4">好看的动画片赶紧来看啦</p>
+         </div>
+     </div>
+</body>
+</html>

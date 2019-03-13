@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div#userNameId{float:right}
+</style>
+<body>
+
+<dl>
+    <dt>通行证用户名：</dt>
+    <dd><input type="text" id="userName" onfocus="focusShow('userName','' +
+     '1、由字母、数字、下划线、点、减号组成<br/>2、只能以数字、字母开头或结尾，' +'且长度为4-18')"
+               onblur="checkUserName()" class="inputs userWidth"> @163.com</dd>
+    <div id="userNameId" class="error_prompt">fvbf</div>
+</dl>
+</body>
+
+<script>
+    function focusShow(inputId,stu) {
+        var inputs=document.querySelector(".inputs")
+         var aa=inputs.parentNode.parentNode.nextSibling;
+
+        console.log(aa.parentNode.lastChild)
+
+    }
+    //验证用户名输入
+    function checkUserName(){
+        var reg=/^[a-zA-Z0-9][.a-zA-Z0-9_-]{3,17}$/;
+        var str="用户名格式输入错误";
+        if(!userName.value.match(reg)){
+            appendHtml(userNameId,str,"error_prompt");
+            verifyer=false;
+        }else{
+            appendHtml(userNameId,"输入正确","ok_prompt");
+            userName.className="greenBorder";
+            verifyer=true;
+        }
+    }
+</script>
+</html>
