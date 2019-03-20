@@ -1,0 +1,14 @@
+body,div,table,tr,th,{margin: 0;padding: 0}
+#box{
+	margin:0 auto;pading 0 auto;text-align: center;
+	width:600px;
+	}
+h2{height:100px;line-height: 80px;
+	font-size: 40px;background-color:#3a6587; 
+}
+table{margin-top: -33px;}
+
+
+
+
+

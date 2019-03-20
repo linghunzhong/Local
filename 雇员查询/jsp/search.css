@@ -1,0 +1,34 @@
+body,div,form,h2,input,select,option{margin: 0;padding: 0}
+#box{
+	position:absolute;left:27%;top:25%;text-align: center;
+	width:600px;
+	}
+h2{height:100px;line-height: 80px;
+	font-size: 40px;background-color:palevioletred  
+}
+form{font-size:25px;background-color:palegoldenrod;
+    line-height: 40px;height:120px;text-align: left;
+ }
+
+input{font-size:20px;height: 30px }
+select{height: 30px ;width: 150px;font-size:15px;}
+/*当文本框内容不符合要求时，提示文本的样式*/
+.error_prompt{
+    border:solid 1px #ff3300;
+    background-color:#fff2e5;
+    background-image:url(../image/li_err.gif);
+    background-repeat:no-repeat;
+    background-position:5px 2px;
+    padding:2px 5px 0px 25px;
+    line-height:20px;
+}
+/*当文本框内容输入正确时，提示文本的样式*/
+.ok_prompt{
+    border:solid 1px #01be00;
+    background-color:#e6fee4;
+    background-image:url(../image/li_ok.gif);
+    background-repeat:no-repeat;
+    background-position:5px 2px;
+    padding:2px 5px 0px 25px;
+    line-height:20px;
+}
